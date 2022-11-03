@@ -1,4 +1,5 @@
 import * as Notifications from 'expo-notifications';
+import { Platform } from 'react-native'
 
 const registerForPushNotificationsAsync = async () => {
   // check for notification permission
