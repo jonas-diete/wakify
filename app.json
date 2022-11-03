@@ -1,5 +1,6 @@
 {
   "expo": {
+    "scheme": "exp://",
     "name": "wakify",
     "slug": "wakify",
     "version": "1.0.0",
