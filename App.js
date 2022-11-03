@@ -3,6 +3,7 @@ import { StatusBar } from 'expo-status-bar';
 import { StyleSheet, Text, View, Button, Platform } from 'react-native';
 import * as Notifications from 'expo-notifications';
 import registerForPushNotificationsAsync from './src/utils/registerForPushNotifications';
+import schedulePushNotification from './src/utils/schedulePushNotification';
 
 // sets the notifications to show up even when app is in foreground (mainly for testing - can be deleted later)
 Notifications.setNotificationHandler({
@@ -48,23 +49,6 @@ export default function App() {
       />
     </View>
   );
-}
-
-async function schedulePushNotification() {
-  await Notifications.scheduleNotificationAsync({
-    content: {
-      title: "Good Morning!",
-      body: 'Tap to set your mood',
-      data: { data: 'goes here' },
-    },
-    trigger: { 
-      seconds: 10,
-      // TODO update with correct time user has entered, e.g. 8:00am is this:
-      // hour: 8,
-      // minute: 0,
-      // repeats: true
-    },
-  });
 }
 
 const styles = StyleSheet.create({
