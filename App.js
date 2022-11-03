@@ -17,7 +17,7 @@ export default function App() {
   const responseListener = useRef();
 
   useEffect( () => {
-    // Register for push notifications
+    // Register device for push notifications
     registerForPushNotificationsAsync();
 
     // Listening for user tapping/interacting with notification
