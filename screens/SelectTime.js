@@ -70,6 +70,7 @@ function SelectTime({ navigation }){
         title="Submit"
         onPress={async () => {
           await schedulePushNotification(selectedHour, selectedMinute);
+          Alert.alert(`You will receive a notification at ${selectedHour}:${selectedMinute}.`)
           navigation.popToTop();
         }}
       />

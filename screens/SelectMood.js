@@ -1,4 +1,5 @@
-import { Text, View, Button } from 'react-native';
+import { Text, View, Button, Alert, TouchableOpacity, Image} from 'react-native';
+import { StatusBar } from 'expo-status-bar';
 import styles from '../src/utils/styles.js'
 
 function SelectMood({ navigation }) {
