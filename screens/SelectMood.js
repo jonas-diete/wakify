@@ -66,7 +66,7 @@ function SelectMood({ navigation }) {
   async function getPlaylist(mood) {
     let playlistUrl = ''
     await spotifyApi.getPlaylistsForCategory("0JQ5DAqbMKFzHmL4tf05da", {limit: 50}).then(
-      function(data) {ç
+      function(data) {
         playlistUrl = findPlaylist(data.body.playlists.items, mood);
       },
       function(err) {
