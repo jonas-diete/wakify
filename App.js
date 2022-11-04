@@ -5,6 +5,8 @@ import { NavigationContainer } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import Home from './screens/home.js'
 import DetailsScreen from './screens/details.js'
+import SelectTime from './screens/SelectTime'
+import SelectMood from './screens/SelectMood'
 
 // sets the notifications to show up even when app is in foreground (mainly for testing - can be deleted later)
 Notifications.setNotificationHandler({
@@ -46,6 +48,8 @@ function App(){
       <Stack.Navigator initialRouteName="Home">
         <Stack.Screen name="Home" component={Home} />
         <Stack.Screen name="Details" component={DetailsScreen} />
+        <Stack.Screen name="SelectTime" component={SelectTime} />
+        <Stack.Screen name="SelectMood" component={SelectMood} />
       </Stack.Navigator>
     </NavigationContainer>  
   );
