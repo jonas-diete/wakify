@@ -8,7 +8,6 @@ import DetailsScreen from './screens/details.js'
 import SelectTime from './screens/SelectTime'
 import SelectMood from './screens/SelectMood'
 
-// sets the notifications to show up even when app is in foreground (mainly for testing - can be deleted later)
 Notifications.setNotificationHandler({
   handleNotification: async () => ({
     shouldShowAlert: true,
@@ -38,11 +37,12 @@ function App(){
     };
   }, []);
 
+
   const notificationNavigationHandler = ({ data }) => {
     // add logic here to navigate to a specific app screen
     console.log('A notification has been tapped', data)
   }
-
+  
   return (
     <NavigationContainer>
       <Stack.Navigator initialRouteName="Home">
@@ -56,4 +56,4 @@ function App(){
 }
 
 
-export default App ;
+export default App;
