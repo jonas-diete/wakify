@@ -26,17 +26,13 @@ const apiPrefix = 'https://api.spotify.com/v1';
 const categoryId = "0JQ5DAqbMKFzHmL4tf05da";
 
 
-
-
-
-
 function SelectMood({ navigation }) {
   const [access_Token, setAccess_Token] = useState('')
   
   const [request, response, promptAsync] = useAuthRequest(
     {
       responseType: ResponseType.Token,
-      clientId: "7241615fa50c440dbf5d06ee41374ddb",
+      clientId: "4bcebf291d354ebd849e9e672f76ce40",
       scopes: ["user-read-email", "playlist-modify-public", "playlist-modify-private", "playlist-read-private", 
       "app-remote-control","user-read-playback-state", "user-modify-playback-state", "user-read-recently-played"],
       // In order to follow the "Authorization Code Flow" to fetch token after authorizationEndpoint
