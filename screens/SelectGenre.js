@@ -6,25 +6,6 @@ import AsyncStorage from '@react-native-async-storage/async-storage';
 import storeData from '../asyncStorage/storeData';
 import getData from '../asyncStorage/getData';
 
-// const storeData = async (key, value) => {
-//   try {
-//     await AsyncStorage.setItem(key, value)
-//   } catch (e) {
-//     // saving error
-//   }
-// }
-
-// const getData = async (key) => {
-//   try {
-//     const value = await AsyncStorage.getItem(key)
-//     if(value !== null) {
-//       // value previously stored
-//     }
-//     return value;
-//   } catch(e) {
-//     // error reading value
-//   }
-// }
 
 function Home({ navigation }){
   const [genre, setGenre] = useState('Loading');
