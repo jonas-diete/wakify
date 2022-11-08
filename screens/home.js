@@ -38,21 +38,17 @@ function Home({ navigation }){
       <StatusBar style="auto" />
       <Text style={logo.text}>Wakify</Text>
       <Text style={caption.text}>matches your mood to a playlist</Text>
-      <Button
-        title="Select Time to Get Notifications"
-        onPress={() => navigation.navigate('SelectTime')}
-      />
-      <Button
-        title="Select Your Mood"
-        onPress={() => navigation.navigate('SelectMood')}
-      />
-      <Button
-        title="Select Your Favourite Genres"
-        onPress={() => navigation.navigate('SelectGenre')}
-      />
+      <Pressable style={sty.button} 
+        onPress={() => navigation.navigate('SelectMood')}>
+        <Text style={sty.text}>Select Your Mood</Text>
+      </Pressable>
+      <Pressable style={sty.button} 
+        onPress={() => navigation.navigate('SelectGenre')}>
+        <Text style={sty.text}>Favourite Genres</Text>
+      </Pressable>
       <Pressable style={sty.button} 
         onPress={() => navigation.navigate('SelectTime')}>
-        <Text style={sty.text}>Experiment</Text>
+        <Text style={sty.text}>Notification Time</Text>
       </Pressable>
     </View>
   );
@@ -63,9 +59,11 @@ const sty = StyleSheet.create({
     alignItems: 'center',
     justifyContent: 'center',
     paddingVertical: 12,
-    paddingHorizontal: 32,
+    paddingHorizontal: 20,
     borderRadius: 20,
     elevation: 3,
+    width: 180,
+    marginBottom: 10,
     backgroundColor: '#FB6E6E',
   },
   text: {
@@ -85,7 +83,7 @@ const logo = StyleSheet.create({
     paddingHorizontal: 32,
     fontSize: 50,
     lineHeight: 21,
-    fontWeight: 'light',
+    fontWeight: 'bold',
     letterSpacing: 0.25,
     color: '#FB6E6E',
   },
@@ -97,7 +95,8 @@ const caption = StyleSheet.create({
     lineHeight: 21,
     fontWeight: 'light',
     letterSpacing: 0.25,
-    color: '#FB6E6E',
+    color: '#0E86D4',
+    marginBottom: 20,
   },
 });
   

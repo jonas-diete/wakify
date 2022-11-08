@@ -1,5 +1,5 @@
 import * as React from "react";
-import { Text, View, Button, Alert, TouchableOpacity, Image, Linking} from 'react-native';
+import { Text, View, Button, Alert, TouchableOpacity, Image, Linking, Center} from 'react-native';
 import { StatusBar } from 'expo-status-bar';
 import styles from '../src/utils/styles.js'
 import SpotifyWebApi from "spotify-web-api-node";
@@ -10,6 +10,8 @@ import {
 } from "expo-auth-session";
 import * as WebBrowser from "expo-web-browser";
 import { useState } from 'react';
+import { HStack, NativeBaseProvider } from 'native-base';
+
 
 WebBrowser.maybeCompleteAuthSession();
 
@@ -81,63 +83,74 @@ function SelectMood({ navigation }) {
     })
     return foundPlaylist.external_urls.spotify;
   }
-  return (
-    <View style={styles.container}>
-      <StatusBar style="auto" />
-      <Text>Wakify</Text>
-      <Button
-        disabled={!request}
-        title="Authorize Spotify"
-        onPress={() => {
-          promptAsync();
-        }}
-      />
-      <Text>Select Your Mood:</Text>
-      <View>
-        <TouchableOpacity onPress={async () => {
-          Linking.openURL(await getPlaylist("happy"))
-          }
-        }>
-          <Image style={styles.button} source={require('../assets/happy.png')} />
-        </TouchableOpacity>
-        <TouchableOpacity onPress={async () => {
-          Linking.openURL(await getPlaylist("coffee"))
-          }}>
-          <Image style={styles.button} source={require('../assets/neutral.png')} />
-        </TouchableOpacity>
-        <TouchableOpacity onPress={async () => {
-          Linking.openURL(await getPlaylist("sad"))
-          }}>
-          <Image style={styles.button} source={require('../assets/sad.png')} />
-        </TouchableOpacity>
-        <TouchableOpacity onPress={async () => {
-          Linking.openURL(await getPlaylist("sad"))
-          }}>
-          <Image style={styles.button} source={require('../assets/distraught.png')} />
-        </TouchableOpacity>
-        <TouchableOpacity onPress={async () => {
-          Linking.openURL(await getPlaylist("feel good"))
-          }}>
-          <Image style={styles.button} source={require('../assets/angry.png')} />
-        </TouchableOpacity>
-        <TouchableOpacity onPress={async () => {
-          Linking.openURL(await getPlaylist("night"))
-          }}>
-          <Image style={styles.button} source={require('../assets/tired.png')} />
-        </TouchableOpacity>
-        <TouchableOpacity onPress={async () => {
-          Linking.openURL(await getPlaylist("energy"))
-          }}>
-          <Image style={styles.button} source={require('../assets/active.png')} />
-        </TouchableOpacity>
-      </View>
+  return<HStack space={3} justifyContent="center">
+  <Center h="40" w="20" bg="primary.300" rounded="md" shadow={3} />
+  <Center h="40" w="20" bg="primary.500" rounded="md" shadow={3} />
+  <Center h="40" w="20" bg="primary.700" rounded="md" shadow={3} />
+</HStack>; 
+// (
+    // <View style={styles.container}>
+    //   <StatusBar style="auto" />
+    //   <Text>Wakify</Text>
+    //   <Button
+    //     disabled={!request}
+    //     title="Authorize Spotify"
+    //     onPress={() => {
+    //       promptAsync();
+    //     }}
+    //   />
+    //   <Text>Select Your Mood:</Text>
+    //   <View>
+    //     <TouchableOpacity onPress={async () => {
+    //       Linking.openURL(await getPlaylist("happy"))
+    //       }
+    //     }>
+    //       <Image style={styles.button} source={require('../assets/happy.png')} />
+    //     </TouchableOpacity>
+    //     <TouchableOpacity onPress={async () => {
+    //       Linking.openURL(await getPlaylist("coffee"))
+    //       }}>
+    //       <Image style={styles.button} source={require('../assets/neutral.png')} />
+    //     </TouchableOpacity>
+    //     <TouchableOpacity onPress={async () => {
+    //       Linking.openURL(await getPlaylist("sad"))
+    //       }}>
+    //       <Image style={styles.button} source={require('../assets/sad.png')} />
+    //     </TouchableOpacity>
+    //     <TouchableOpacity onPress={async () => {
+    //       Linking.openURL(await getPlaylist("sad"))
+    //       }}>
+    //       <Image style={styles.button} source={require('../assets/distraught.png')} />
+    //     </TouchableOpacity>
+    //     <TouchableOpacity onPress={async () => {
+    //       Linking.openURL(await getPlaylist("feel good"))
+    //       }}>
+    //       <Image style={styles.button} source={require('../assets/angry.png')} />
+    //     </TouchableOpacity>
+    //     <TouchableOpacity onPress={async () => {
+    //       Linking.openURL(await getPlaylist("night"))
+    //       }}>
+    //       <Image style={styles.button} source={require('../assets/tired.png')} />
+    //     </TouchableOpacity>
+    //     <TouchableOpacity onPress={async () => {
+    //       Linking.openURL(await getPlaylist("energy"))
+    //       }}>
+    //       <Image style={styles.button} source={require('../assets/active.png')} />
+    //     </TouchableOpacity>
+    //   </View>
 
-      <Button
-        title="Go Back"
-        onPress={() => navigation.popToTop()}
-      />
-    </View>
-  );
+
+    //   <Button
+    //     title="Go Back"
+    //     onPress={() => navigation.popToTop()}
+    //   />
+
+    // </View>
+  
+  
+    // );
+
+
 }
 
 export default SelectMood;
