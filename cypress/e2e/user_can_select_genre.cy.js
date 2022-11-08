@@ -38,15 +38,4 @@ describe('SelectGenre', () => {
     //
     cy.contains('Your favourite Genre is: R&B').should('be.visible');
   })
-
-  it('should go back to the homepage using the back button', () => {
-    cy.visit('/');
-    cy.contains('Genre').click();
-
-    // 
-    cy.contains('Back').click();
-
-    //
-    cy.get('title').contains('Home');
-  })
 })

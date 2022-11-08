@@ -9,10 +9,7 @@ import {
   useAuthRequest,
 } from "expo-auth-session";
 import * as WebBrowser from "expo-web-browser";
-import Emojis from '../src/utils/Emojis.js';
-import {useState, useEffect } from 'react';
-import storeAccessToken from "../asyncStorage/storeAccessToken.js";
-
+import { useState } from 'react';
 
 WebBrowser.maybeCompleteAuthSession();
 
@@ -29,16 +26,13 @@ const apiPrefix = 'https://api.spotify.com/v1';
 const categoryId = "0JQ5DAqbMKFzHmL4tf05da";
 
 
-let access_token
-
-
 function SelectMood({ navigation }) {
   const [access_Token, setAccess_Token] = useState('')
-  // console.log(access_token)
+  
   const [request, response, promptAsync] = useAuthRequest(
     {
       responseType: ResponseType.Token,
-      clientId: '7241615fa50c440dbf5d06ee41374ddb',
+      clientId: "4bcebf291d354ebd849e9e672f76ce40",
       scopes: ["user-read-email", "playlist-modify-public", "playlist-modify-private", "playlist-read-private", 
       "app-remote-control","user-read-playback-state", "user-modify-playback-state", "user-read-recently-played"],
       // In order to follow the "Authorization Code Flow" to fetch token after authorizationEndpoint
@@ -50,58 +44,93 @@ function SelectMood({ navigation }) {
       grant_type: "authorization_code",
       json: true,
     },
-    discovery,
-    // console.log(access_token)
+    discovery
   );
-
   
   React.useEffect(() => {
     if (response?.type === "success") {
-      access_token = response.params.access_token;
+      const { access_token } = response.params;
       access_token.toString
       // console.log(response)
       spotifyApi.setAccessToken(access_token)
       // console.log(access_token)
       setAccess_Token(access_token)
-      // storeAccessToken('access_token', access_token)
+  
     }
   }, [response]);
-
-  useEffect(() => {
-    async function fetchData() {
-      storeAccessToken(access_Token);
-    }
-    fetchData();
-  }, [])
-
-const TokenCheck = () => {
-  if (access_Token !== '') {
-    return ( <Emojis /> )
-  } else {
-    return (
-      <View>
-        <Text>You need to authorize Spotify to use Wakify</Text>
-        <Button
-          disabled={!request}
-          title="Authorize Spotify"
-          onPress={() => {
-            promptAsync();
-          }}
-        />
-      </View>
-    )
+  
+  async function getPlaylist(mood) {
+    let playlistUrl = ''
+    await spotifyApi.getPlaylistsForCategory("0JQ5DAqbMKFzHmL4tf05da", {limit: 50}).then(
+      function(data) {
+        playlistUrl = findPlaylist(data.body.playlists.items, mood);
+      },
+      function(err) {
+        console.error(err);
+      }
+      );
+    return String(playlistUrl);
   }
-}
-
+  
+  const findPlaylist = (playlistItems, mood) => { 
+    let foundPlaylist = ''
+    playlistItems.forEach((item) => {
+      if (item.name.toLowerCase().includes(mood)) {
+        foundPlaylist = item;
+      }
+    })
+    return foundPlaylist.external_urls.spotify;
+  }
   return (
     <View style={styles.container}>
       <StatusBar style="auto" />
       <Text>Wakify</Text>
-      <TokenCheck />
       <Button
-        title="Go Back"
-        onPress={() => navigation.popToTop()}
+        disabled={!request}
+        title="Authorize Spotify"
+        onPress={() => {
+          promptAsync();
+        }}
       />
+      <Text>Select Your Mood:</Text>
+      <View>
+        <TouchableOpacity onPress={async () => {
+          Linking.openURL(await getPlaylist("happy"))
+          }
+        }>
+          <Image style={styles.button} source={require('../assets/happy.png')} />
+        </TouchableOpacity>
+        <TouchableOpacity onPress={async () => {
+          Linking.openURL(await getPlaylist("coffee"))
+          }}>
+          <Image style={styles.button} source={require('../assets/neutral.png')} />
+        </TouchableOpacity>
+        <TouchableOpacity onPress={async () => {
+          Linking.openURL(await getPlaylist("sad"))
+          }}>
+          <Image style={styles.button} source={require('../assets/sad.png')} />
+        </TouchableOpacity>
+        <TouchableOpacity onPress={async () => {
+          Linking.openURL(await getPlaylist("sad"))
+          }}>
+          <Image style={styles.button} source={require('../assets/distraught.png')} />
+        </TouchableOpacity>
+        <TouchableOpacity onPress={async () => {
+          Linking.openURL(await getPlaylist("feel good"))
+          }}>
+          <Image style={styles.button} source={require('../assets/angry.png')} />
+        </TouchableOpacity>
+        <TouchableOpacity onPress={async () => {
+          Linking.openURL(await getPlaylist("night"))
+          }}>
+          <Image style={styles.button} source={require('../assets/tired.png')} />
+        </TouchableOpacity>
+        <TouchableOpacity onPress={async () => {
+          Linking.openURL(await getPlaylist("energy"))
+          }}>
+          <Image style={styles.button} source={require('../assets/active.png')} />
+        </TouchableOpacity>
+      </View>
     </View>
   );
 }

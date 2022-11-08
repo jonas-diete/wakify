@@ -81,11 +81,7 @@ function Home({ navigation }){
           setGenre(await getData('genre'));
         }}
       />
-      <Text>Your favourite Genre is: {genre ? genre : 'Not chosen'}</Text>            
-      <Button
-        title="Back"
-        onPress={() => navigation.popToTop()}
-      />
+      <Text>Your favourite Genre is: {genre ? genre : 'Not chosen'}</Text>
     </View>
   );
 }

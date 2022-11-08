@@ -82,11 +82,6 @@ function SelectTime({ navigation }){
           navigation.popToTop();
         }}
       />
-
-    <Button
-      title="Back"
-      onPress={() => navigation.popToTop()}
-      />
     </View>
   );
 }
