@@ -7,6 +7,7 @@ import Home from './screens/home.js'
 import DetailsScreen from './screens/details.js'
 import SelectTime from './screens/SelectTime'
 import SelectMood from './screens/SelectMood'
+import SelectGenre from './screens/SelectGenre'
 
 Notifications.setNotificationHandler({
   handleNotification: async () => ({
@@ -50,6 +51,7 @@ function App(){
         <Stack.Screen name="Details" component={DetailsScreen} />
         <Stack.Screen name="SelectTime" component={SelectTime} />
         <Stack.Screen name="SelectMood" component={SelectMood} />
+        <Stack.Screen name="SelectGenre" component={SelectGenre} />
       </Stack.Navigator>
     </NavigationContainer>  
   );

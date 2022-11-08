@@ -17,6 +17,7 @@ function Home({ navigation }){
       />
       <Button
         title="Select Your Favourite Genres"
+        onPress={() => navigation.navigate('SelectGenre')}
       />
     </View>
   );
