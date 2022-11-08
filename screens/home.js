@@ -48,6 +48,7 @@ function Home({ navigation }){
       />
       <Button
         title="Select Your Favourite Genres"
+        onPress={() => navigation.navigate('SelectGenre')}
       />
       <Pressable style={sty.button} 
         onPress={() => navigation.navigate('SelectTime')}>
