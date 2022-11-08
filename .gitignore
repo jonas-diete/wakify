@@ -11,5 +11,9 @@ npm-debug.*
 web-build/
 coverage
 
+# cypress
+cypress/screenshots
+cypress/videos
+
 # macOS
 .DS_Store
