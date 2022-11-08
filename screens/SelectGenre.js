@@ -2,7 +2,6 @@ import React, { useEffect, useState } from 'react';
 import { Text, View, Button} from 'react-native';
 import { StatusBar } from 'expo-status-bar';
 import styles from '../src/utils/styles.js'
-import AsyncStorage from '@react-native-async-storage/async-storage';
 import storeData from '../asyncStorage/storeData';
 import getData from '../asyncStorage/getData';
 
