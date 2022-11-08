@@ -94,7 +94,7 @@ function SelectMood({ navigation }) {
       />
       <Text>Select Your Mood:</Text>
       <View>
-        <TouchableOpacitygi onPress={async () => {
+        <TouchableOpacity onPress={async () => {
           Linking.openURL(await getPlaylist("happy"))
           }
         }>
