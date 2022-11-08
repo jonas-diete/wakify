@@ -36,7 +36,7 @@ function SelectTime({ navigation }){
       onSelect={(selectedItem, index) => {
         selectedHour = parseInt(selectedItem);
       }}
-      defaultButtonText={'Select Hour'}
+      defaultButtonText={'08'}
       buttonTextAfterSelection={(selectedItem, index) => {
         return 'Hour ' + selectedItem;
       }}
@@ -54,7 +54,7 @@ function SelectTime({ navigation }){
       onSelect={(selectedItem, index) => {
         selectedMinute = parseInt(selectedItem);
       }}
-      defaultButtonText={'Select Minute'}
+      defaultButtonText={'00'}
       buttonTextAfterSelection={(selectedItem, index) => {
         return 'Minute ' + selectedItem;
       }}
@@ -81,11 +81,6 @@ function SelectTime({ navigation }){
           Alert.alert(`You will receive a notification at ${selectedHour}:${minuteString}.`)
           navigation.popToTop();
         }}
-      />
-
-    <Button
-      title="Back"
-      onPress={() => navigation.popToTop()}
       />
     </View>
   );

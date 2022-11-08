@@ -98,10 +98,6 @@ const TokenCheck = () => {
       <StatusBar style="auto" />
       <Text>Wakify</Text>
       <TokenCheck />
-      <Button
-        title="Go Back"
-        onPress={() => navigation.popToTop()}
-      />
     </View>
   );
 }
