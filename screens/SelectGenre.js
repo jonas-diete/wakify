@@ -2,29 +2,9 @@ import React, { useEffect, useState } from 'react';
 import { Text, View, Button} from 'react-native';
 import { StatusBar } from 'expo-status-bar';
 import styles from '../src/utils/styles.js'
-import AsyncStorage from '@react-native-async-storage/async-storage';
 import storeData from '../asyncStorage/storeData';
 import getData from '../asyncStorage/getData';
 
-// const storeData = async (key, value) => {
-//   try {
-//     await AsyncStorage.setItem(key, value)
-//   } catch (e) {
-//     // saving error
-//   }
-// }
-
-// const getData = async (key) => {
-//   try {
-//     const value = await AsyncStorage.getItem(key)
-//     if(value !== null) {
-//       // value previously stored
-//     }
-//     return value;
-//   } catch(e) {
-//     // error reading value
-//   }
-// }
 
 function Home({ navigation }){
   const [genre, setGenre] = useState('Loading');
@@ -101,7 +81,7 @@ function Home({ navigation }){
           setGenre(await getData('genre'));
         }}
       />
-      <Text>Your favourite Genre is: {genre}</Text>            
+      <Text>Your favourite Genre is: {genre ? genre : 'Not chosen'}</Text>            
       <Button
         title="Back"
         onPress={() => navigation.popToTop()}
