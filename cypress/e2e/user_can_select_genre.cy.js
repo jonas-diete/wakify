@@ -24,8 +24,6 @@ describe('SelectGenre', () => {
     // favourite genre not chosen yet
     cy.contains('Not chosen').should('be.visible');
 
-    // back button
-    cy.contains('Back').should('be.visible');
   })
 
   it("should select favourite genre 'R&B'", () => {
