@@ -4,6 +4,7 @@ import styles from '../src/utils/styles.js'
 import registerForPushNotificationsAsync from '../src/utils/registerForPushNotifications';
 import React, { useEffect, useRef } from 'react';
 import * as Notifications from 'expo-notifications';
+import storeAccessToken from '../asyncStorage/storeAccessToken.js';
 
 
 function Home({ navigation }){
@@ -41,7 +42,8 @@ function Home({ navigation }){
       />
       <Button
         title="Select Your Mood"
-        onPress={() => navigation.navigate('SelectMood')}
+        onPress={() =>
+          navigation.navigate('SelectMood')}
       />
       <Button
         title="Select Your Favourite Genres"
