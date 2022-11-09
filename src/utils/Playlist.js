@@ -10,17 +10,17 @@ const spotifyApi = new SpotifyWebApi({
 
   
   async function getPlaylist(mood) {
-      let playlistUrl = ''
-      spotifyApi.setAccessToken(await getAccessToken('access_token'));
-  await spotifyApi.getPlaylistsForCategory("0JQ5DAqbMKFzHmL4tf05da", {limit: 50}).then(
-    function(data) {
-      playlistUrl = findPlaylist(data.body.playlists.items, mood);
-    },
-    function(err) {
-      console.error(err);
-    }
-    );
-  return String(playlistUrl);
+    let playlistUrl = ''
+    spotifyApi.setAccessToken(await getAccessToken('access_token'));
+await spotifyApi.getPlaylistsForCategory("0JQ5DAqbMKFzHmL4tf05da", {limit: 50}).then(
+  function(data) {
+    playlistUrl = findPlaylist(data.body.playlists.items, mood);
+  },
+  function(err) {
+    console.error(err);
+  }
+  );
+return String(playlistUrl);
 }
   
 const findPlaylist = (playlistItems, mood) => { 

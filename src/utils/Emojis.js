@@ -8,8 +8,11 @@ import { useState } from "react";
 
 function Emojis() {
   return (
-    <View >
-      <Text style={styles.captionText}>Select Your Mood:</Text>
+    <View style={styles.container}>
+      <Image
+          style={styles.logoMood}
+          source={require('../../assets/wakifyText.png')}
+        />
       <View style={styles.rowContainer}>
         <TouchableOpacity onPress={async () => {
           Linking.openURL(await getPlaylist("happy"))
@@ -31,7 +34,7 @@ function Emojis() {
         </TouchableOpacity>
         <View style={styles.emojiSpacing}></View>
         <TouchableOpacity onPress={async () => {
-          Linking.openURL(await getPlaylist("sad"))
+          Linking.openURL(await getPlaylist("life sucks"))
           }}>
           <Image style={styles.emojis} source={require('../../assets/distraught.png')} />
         </TouchableOpacity>
@@ -55,7 +58,14 @@ function Emojis() {
           }}>
           <Image style={styles.emojis} source={require('../../assets/active.png')} />
         </TouchableOpacity>
+        <View style={styles.emojiSpacing}></View>
+        <TouchableOpacity onPress={async () => {
+          Linking.openURL(await getPlaylist("Heart Beats"))
+          }}>
+          <Image style={styles.emojis} source={require('../../assets/love.png')} />
+        </TouchableOpacity>
       </View>
+      <Text style={styles.captionText}>Select Your Mood</Text>
     </View>
   )
 }

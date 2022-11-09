@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { Text, View, Button} from 'react-native';
+import { Text,Pressable, View, Button} from 'react-native';
 import { StatusBar } from 'expo-status-bar';
 import styles from '../src/utils/styles.js'
 import storeData from '../asyncStorage/storeData';
@@ -17,71 +17,78 @@ function Home({ navigation }){
   return(
   <View style={styles.container}>
       <StatusBar style="auto" />
-      <Text>Choose your favourite genre</Text>
-      <Button
-        title="Rock"
-        onPress={async () => {
+      <Text style={styles.captionText}>Choose your favourite genre</Text>
+      <Pressable style={styles.genreButton}
+         onPress={async () => {
           await storeData('genre', 'Rock');
           setGenre(await getData('genre'));
-        }}
-      />
-      <Button
-        title="Electronic / Dance Music"
-        onPress={async () => {
+        }}>
+        <Text style={styles.genreText}>Rock</Text>
+      </Pressable>
+      <Pressable style={styles.genreButton}
+         onPress={async () => {
           await storeData('genre', 'Electronic');
           setGenre(await getData('genre'));
-        }}
-      />
-      <Button
-        title="Hip-Hop"
-        onPress={async () => {
+        }}>
+        <Text style={styles.genreText}>Electronic</Text>
+      </Pressable>
+      <Pressable style={styles.genreButton}
+         onPress={async () => {
+          await storeData('genre', 'Rap');
+          setGenre(await getData('genre'));
+        }}>
+        <Text style={styles.genreText}>Rap</Text>
+      </Pressable>
+      <Pressable style={styles.genreButton}
+         onPress={async () => {
           await storeData('genre', 'Hip-Hop');
           setGenre(await getData('genre'));
-        }}
-      />
-      <Button
-        title="Classical"
-        onPress={async () => {
-          await storeData('genre','Classical');
+        }}>
+        <Text style={styles.genreText}>Hip-Hop</Text>
+      </Pressable>
+      <Pressable style={styles.genreButton}
+         onPress={async () => {
+          await storeData('genre', 'Classic');
           setGenre(await getData('genre'));
-        }}
-      />
-      <Button
-        title="Dubstep"
-        onPress={async () => {
+        }}>
+        <Text style={styles.genreText}>Classic</Text>
+      </Pressable>
+      <Pressable style={styles.genreButton}
+         onPress={async () => {
           await storeData('genre', 'Dubstep');
           setGenre(await getData('genre'));
-        }}
-      />
-      <Button
-        title="Folk"
-        onPress={async () => {
+        }}>
+        <Text style={styles.genreText}>Dubstep</Text>
+      </Pressable>
+      <Pressable style={styles.genreButton}
+         onPress={async () => {
           await storeData('genre', 'Folk');
           setGenre(await getData('genre'));
-        }}
-      />
-      <Button
-        title="R&B"
-        onPress={async () => {
+        }}>
+        <Text style={styles.genreText}>Folk</Text>
+      </Pressable>
+      <Pressable style={styles.genreButton}
+         onPress={async () => {
           await storeData('genre', 'R&B');
           setGenre(await getData('genre'));
-        }}
-      />
-      <Button
-        title="Pop"
-        onPress={async () => {
+        }}>
+        <Text style={styles.genreText}>R&B</Text>
+      </Pressable>
+      <Pressable style={styles.genreButton}
+         onPress={async () => {
           await storeData('genre', 'Pop');
           setGenre(await getData('genre'));
-        }}
-      />
-      <Button
-        title="Jazz"
-        onPress={async () => {
+        }}>
+        <Text style={styles.genreText}>Pop</Text>
+      </Pressable>
+      <Pressable style={styles.genreButton}
+         onPress={async () => {
           await storeData('genre', 'Jazz');
           setGenre(await getData('genre'));
-        }}
-      />
-      <Text>Your favourite Genre is: {genre ? genre : 'Not chosen'}</Text>
+        }}>
+        <Text style={styles.genreText}>Jazz</Text>
+      </Pressable>
+      <Text style={styles.captionText}>Your favourite Genre is: <Text style={styles.favouriteGenre}>{genre ? genre : 'Not chosen'}</Text></Text>
     </View>
   );
 }

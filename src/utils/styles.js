@@ -48,6 +48,15 @@ const styles = StyleSheet.create({
       textAlign: 'center'
     },
 
+    genreText:{
+      fontSize: 20,
+      lineHeight: 21,
+      fontWeight: 'bold',
+      letterSpacing: 0.25,
+      color: '#FB6E6E',
+      textAlign: 'center'
+    },
+
     logoText: {
       alignItems: 'center',
       justifyContent: 'center',
@@ -67,13 +76,38 @@ const styles = StyleSheet.create({
       lineHeight: 21,
       letterSpacing: 0.25,
       // color: '#245992',
-      marginBottom: 20,
+      marginVertical: 20,
     },
 
     logo: {
-      width: 250,
-      height: 250,
+      width: 350,
+      height: 350,
     },
+
+    logoMood:{
+      width: 200,
+      height:200,
+    },
+
+    genreButton:{
+      alignItems: 'center',
+      justifyContent: 'center',
+      paddingVertical: 12,
+      paddingHorizontal: 20,
+      borderRadius: 20,
+      elevation: 3,
+      width: 180,
+      marginVertical: 5,
+      backgroundColor: '#FFFFFF',
+      borderColor: '#FB6E6E',
+      borderWidth: 2,
+    },
+
+    favouriteGenre:{
+      color:'#FB6E6E',
+      fontWeight: 'bold',
+    }
+
 });
 
 
