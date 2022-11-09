@@ -6,7 +6,7 @@ import { useState } from "react";
 
 
 
-export default Emojis = () => {
+function Emojis () {
   return (
     <View >
       <Text>Select Your Mood:</Text>
@@ -48,3 +48,4 @@ export default Emojis = () => {
     </View>
   )
 }
+export default Emojis;

@@ -13,11 +13,12 @@ import Emojis from '../src/utils/Emojis.js';
 import {useState, useEffect } from 'react';
 import storeAccessToken from "../asyncStorage/storeAccessToken.js";
 
+const clientId = '7241615fa50c440dbf5d06ee41374ddb'
 
 WebBrowser.maybeCompleteAuthSession();
 
 const spotifyApi = new SpotifyWebApi({
-  clientId: '7241615fa50c440dbf5d06ee41374ddb'
+  clientId: clientId
 });
 
 const discovery = {
@@ -38,7 +39,7 @@ function SelectMood({ navigation }) {
   const [request, response, promptAsync] = useAuthRequest(
     {
       responseType: ResponseType.Token,
-      clientId: '7241615fa50c440dbf5d06ee41374ddb',
+      clientId: clientId,
       scopes: ["user-read-email", "playlist-modify-public", "playlist-modify-private", "playlist-read-private", 
       "app-remote-control","user-read-playback-state", "user-modify-playback-state", "user-read-recently-played"],
       // In order to follow the "Authorization Code Flow" to fetch token after authorizationEndpoint
@@ -63,7 +64,7 @@ function SelectMood({ navigation }) {
       spotifyApi.setAccessToken(access_token)
       // console.log(access_token)
       setAccess_Token(access_token)
-      // storeAccessToken('access_token', access_token)
+      storeAccessToken('access_token', access_token)
     }
   }, [response]);
 
