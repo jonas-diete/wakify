@@ -1,9 +1,12 @@
+import React, { useEffect, useState } from 'react';
 import schedulePushNotification from '../src/utils/schedulePushNotification';
-import { Text, View, Button, Alert} from 'react-native';
+import { Text, View, Button, Alert, Platform} from 'react-native';
 import { StatusBar } from 'expo-status-bar';
 import styles from '../src/utils/styles.js'
 import SelectDropdown from 'react-native-select-dropdown'
 import { cancelAllScheduledNotificationsAsync } from 'expo-notifications';
+import storeData from '../asyncStorage/storeData';
+import getData from '../asyncStorage/getData';
 
 const hours = [];
 const minutes = [];
@@ -26,11 +29,20 @@ let selectedHour;
 let selectedMinute;
 
 function SelectTime({ navigation }){
+  const [time, setTime] = useState('Loading');
+
+  useEffect(() => {
+    async function fetchData() {
+      setTime(await getData('time'));
+    }
+    fetchData();
+  }, [])
+
   return(
     <View style={styles.container}>
     <StatusBar style="auto" />
-    <Text>Wakify - matches your mood to a playlist</Text>
-    <Text>Select the time you wake up</Text>
+    <Text>Your notification time is {time ? time : 'not chosen yet.'}</Text>
+    <Text>You can change your notification time here:</Text>
     <SelectDropdown
       data={hours}
       onSelect={(selectedItem, index) => {
@@ -70,14 +82,18 @@ function SelectTime({ navigation }){
     <Button
         title="Submit"
         onPress={async () => {
-          await cancelAllScheduledNotificationsAsync();
-          await schedulePushNotification(selectedHour, selectedMinute);
+          
+          if (Platform.OS !== 'web') {
+            await cancelAllScheduledNotificationsAsync();
+            await schedulePushNotification(selectedHour, selectedMinute);
+          }
           let minuteString;
           if (selectedMinute < 10){
             minuteString = "0" + selectedMinute;
-          }else{
+          } else {
             minuteString = selectedMinute;
           }
+          storeData('time', `${selectedHour}:${minuteString}`)
           Alert.alert(`You will receive a notification at ${selectedHour}:${minuteString}.`)
           navigation.popToTop();
         }}
