@@ -9,7 +9,6 @@ import {
 } from "react-native";
 import getPlaylist from "./Playlist.js";
 import styles from "./styles.js";
-import { useState } from "react";
 
 function Emojis() {
   return (
@@ -83,7 +82,6 @@ function Emojis() {
         />
       </TouchableOpacity>
     </View>
-  );
+  )
 }
-
 export default Emojis;
