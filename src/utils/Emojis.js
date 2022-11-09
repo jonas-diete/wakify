@@ -2,9 +2,6 @@ import * as React from "react";
 import { Text, View, Button, TouchableOpacity, Image, Linking, LogBox} from 'react-native';
 import getPlaylist from './Playlist.js';
 import styles from './styles.js';
-import { useState } from "react";
-
-
 
 function Emojis() {
   return (

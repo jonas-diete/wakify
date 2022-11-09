@@ -1,5 +1,5 @@
 import * as React from "react";
-import { Text, View, Button, Pressable, TouchableOpacity, Image, Linking} from 'react-native';
+import { Text, View, Pressable, Image} from 'react-native';
 import { StatusBar } from 'expo-status-bar';
 import styles from '../src/utils/styles.js'
 import SpotifyWebApi from "spotify-web-api-node";
@@ -10,14 +10,15 @@ import {
 } from "expo-auth-session";
 import * as WebBrowser from "expo-web-browser";
 import Emojis from '../src/utils/Emojis.js';
-import {useState, useEffect } from 'react';
+import { useState } from "react";
 import storeAccessToken from "../asyncStorage/storeAccessToken.js";
 
+const clientId = '4bcebf291d354ebd849e9e672f76ce40'
 
 WebBrowser.maybeCompleteAuthSession();
 
 const spotifyApi = new SpotifyWebApi({
-  clientId: '4bcebf291d354ebd849e9e672f76ce40'
+  clientId: clientId
 });
 
 const discovery = {
@@ -25,20 +26,13 @@ const discovery = {
   tokenEndpoint: "https://accounts.spotify.com/api/token",
 };
 
-const apiPrefix = 'https://api.spotify.com/v1';
-const categoryId = "0JQ5DAqbMKFzHmL4tf05da";
-
-
-let access_token
-
+let access_token = '';
 
 function SelectMood({ navigation }) {
-  const [access_Token, setAccess_Token] = useState('')
-  // console.log(access_token)
   const [request, response, promptAsync] = useAuthRequest(
     {
       responseType: ResponseType.Token,
-      clientId: '4bcebf291d354ebd849e9e672f76ce40',
+      clientId: clientId,
       scopes: ["user-read-email", "playlist-modify-public", "playlist-modify-private", "playlist-read-private", 
       "app-remote-control","user-read-playback-state", "user-modify-playback-state", "user-read-recently-played"],
       // In order to follow the "Authorization Code Flow" to fetch token after authorizationEndpoint
@@ -51,49 +45,41 @@ function SelectMood({ navigation }) {
       json: true,
     },
     discovery,
-    // console.log(access_token)
   );
 
-  
   React.useEffect(() => {
     if (response?.type === "success") {
+      setInterval(resetToken, 3600000);
       access_token = response.params.access_token;
       access_token.toString
-      // console.log(response)
-      spotifyApi.setAccessToken(access_token)
-      // console.log(access_token)
-      setAccess_Token(access_token)
       storeAccessToken('access_token', access_token)
     }
   }, [response]);
 
-  useEffect(() => {
-    async function fetchData() {
-      storeAccessToken(access_Token);
-    }
-    fetchData();
-  }, [])
-
-const TokenCheck = () => {
-  if (access_Token !== '') {
-    return ( <Emojis /> )
-  } else {
-    return (
-      <View style={styles.container}>
-        <Image
-          style={styles.logo}
-          source={require('../assets/wakify.png')}
-        />
-        <Text style={styles.captionText}>You need to authorize Spotify to use Wakify</Text>
-        <Pressable style={styles.button}
-          disabled={!request}
-          onPress={() => promptAsync()}>
-        <Text style={styles.text}>Authorize Spotify</Text>
-      </Pressable>
-      </View>
-    )
+  const resetToken = () => {
+    access_token = ''
   }
-}
+  
+  const TokenCheck = () => {
+    if (access_token !== '') {
+      return ( <Emojis /> )
+    } else {
+      return (
+        <View style={styles.container}>
+          <Image
+            style={styles.logo}
+            source={require('../assets/wakify.png')}
+          />
+          <Text style={styles.captionText}>You need to authorize Spotify to use Wakify</Text>
+          <Pressable style={styles.button}
+            disabled={!request}
+            onPress={() => promptAsync()}>
+            <Text style={styles.text}>Authorize Spotify</Text>
+          </Pressable>
+        </View>
+      )
+    }
+  }
 
   return (
     <View style={styles.container}>

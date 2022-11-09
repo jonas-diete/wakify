@@ -1,10 +1,13 @@
+import React, { useEffect, useState } from 'react';
 import schedulePushNotification from '../src/utils/schedulePushNotification';
-import { Text, View, Button, Alert, Image} from 'react-native';
+import { Text, View, Button, Alert, Image, Platform} from 'react-native';
 import { StatusBar } from 'expo-status-bar';
 import styles from '../src/utils/styles.js'
 import SelectDropdown from 'react-native-select-dropdown'
 import { cancelAllScheduledNotificationsAsync } from 'expo-notifications';
 import Pressable from 'react-native/Libraries/Components/Pressable/Pressable';
+import storeData from '../asyncStorage/storeData';
+import getData from '../asyncStorage/getData';
 
 const hours = [];
 const minutes = [];
@@ -27,14 +30,20 @@ let selectedHour;
 let selectedMinute;
 
 function SelectTime({ navigation }){
+  const [time, setTime] = useState('Loading');
+
+  useEffect(() => {
+    async function fetchData() {
+      setTime(await getData('time'));
+    }
+    fetchData();
+  }, [])
+
   return(
     <View style={styles.container}>
     <StatusBar style="auto" />
-    <Image
-        style={styles.logo}
-        source={require('../assets/wakify.png')}
-    />
-    <Text style={styles.captionText}>Select Time</Text>
+    <Text>Wakify - matches your mood to a playlist</Text>
+    <Text>Select the time you wake up</Text>
     <SelectDropdown
       data={hours}
       onSelect={(selectedItem, index) => {
@@ -71,22 +80,21 @@ function SelectTime({ navigation }){
       rowStyle={styles.dropdown2RowStyle}
       rowTextStyle={styles.dropdown2RowTxtStyle}
     />
-    <Pressable style={styles.button}
-      onPress={async () => {
-        await cancelAllScheduledNotificationsAsync();
-        await schedulePushNotification(selectedHour, selectedMinute);
-        let minuteString;
-        if (selectedMinute < 10){
-          minuteString = "0" + selectedMinute;
-        }else{
-          minuteString = selectedMinute;
-        }
-        Alert.alert(`You will receive a notification at ${selectedHour}:${minuteString}.`)
-        navigation.popToTop();
-      }}
-      >
-        <Text style={styles.text}>Submit</Text>
-      </Pressable>
+    <Button
+        title="Submit"
+        onPress={async () => {
+          await cancelAllScheduledNotificationsAsync();
+          await schedulePushNotification(selectedHour, selectedMinute);
+          let minuteString;
+          if (selectedMinute < 10){
+            minuteString = "0" + selectedMinute;
+          }else{
+            minuteString = selectedMinute;
+          }
+          Alert.alert(`You will receive a notification at ${selectedHour}:${minuteString}.`)
+          navigation.popToTop();
+        }}
+      />
     </View>
   );
 }
