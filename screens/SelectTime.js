@@ -1,9 +1,10 @@
 import schedulePushNotification from '../src/utils/schedulePushNotification';
-import { Text, View, Button, Alert} from 'react-native';
+import { Text, View, Button, Alert, Image} from 'react-native';
 import { StatusBar } from 'expo-status-bar';
 import styles from '../src/utils/styles.js'
 import SelectDropdown from 'react-native-select-dropdown'
 import { cancelAllScheduledNotificationsAsync } from 'expo-notifications';
+import Pressable from 'react-native/Libraries/Components/Pressable/Pressable';
 
 const hours = [];
 const minutes = [];
@@ -29,8 +30,11 @@ function SelectTime({ navigation }){
   return(
     <View style={styles.container}>
     <StatusBar style="auto" />
-    <Text>Wakify - matches your mood to a playlist</Text>
-    <Text>Select the time you wake up</Text>
+    <Image
+        style={styles.logo}
+        source={require('../assets/wakify.png')}
+    />
+    <Text style={styles.captionText}>Select Time</Text>
     <SelectDropdown
       data={hours}
       onSelect={(selectedItem, index) => {
@@ -67,21 +71,22 @@ function SelectTime({ navigation }){
       rowStyle={styles.dropdown2RowStyle}
       rowTextStyle={styles.dropdown2RowTxtStyle}
     />
-    <Button
-        title="Submit"
-        onPress={async () => {
-          await cancelAllScheduledNotificationsAsync();
-          await schedulePushNotification(selectedHour, selectedMinute);
-          let minuteString;
-          if (selectedMinute < 10){
-            minuteString = "0" + selectedMinute;
-          }else{
-            minuteString = selectedMinute;
-          }
-          Alert.alert(`You will receive a notification at ${selectedHour}:${minuteString}.`)
-          navigation.popToTop();
-        }}
-      />
+    <Pressable style={styles.button}
+      onPress={async () => {
+        await cancelAllScheduledNotificationsAsync();
+        await schedulePushNotification(selectedHour, selectedMinute);
+        let minuteString;
+        if (selectedMinute < 10){
+          minuteString = "0" + selectedMinute;
+        }else{
+          minuteString = selectedMinute;
+        }
+        Alert.alert(`You will receive a notification at ${selectedHour}:${minuteString}.`)
+        navigation.popToTop();
+      }}
+      >
+        <Text style={styles.text}>Submit</Text>
+      </Pressable>
     </View>
   );
 }

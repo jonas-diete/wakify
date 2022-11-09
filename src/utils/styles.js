@@ -36,7 +36,7 @@ const styles = StyleSheet.create({
       borderRadius: 20,
       elevation: 3,
       width: 180,
-      marginBottom: 10,
+      marginVertical: 10,
       backgroundColor: '#FB6E6E',
     },
     text: {
@@ -45,6 +45,7 @@ const styles = StyleSheet.create({
       fontWeight: 'bold',
       letterSpacing: 0.25,
       color: 'white',
+      textAlign: 'center'
     },
 
     logoText: {
@@ -61,18 +62,18 @@ const styles = StyleSheet.create({
 
     captionText: {
       textAlign: "center",
-      fontSize: 16,
-      lineHeight: 21,
+      fontSize: 20,
       fontWeight: 'light',
+      lineHeight: 21,
       letterSpacing: 0.25,
-      color: '#0E86D4',
+      // color: '#245992',
       marginBottom: 20,
     },
 
     logo: {
-      width: 300,
-      height: 300,
-    }
+      width: 250,
+      height: 250,
+    },
 });
 
 

@@ -1,5 +1,5 @@
 import * as React from "react";
-import { Text, View, Button, Alert, TouchableOpacity, Image, Linking} from 'react-native';
+import { Text, View, Button, Pressable, TouchableOpacity, Image, Linking} from 'react-native';
 import { StatusBar } from 'expo-status-bar';
 import styles from '../src/utils/styles.js'
 import SpotifyWebApi from "spotify-web-api-node";
@@ -79,15 +79,17 @@ const TokenCheck = () => {
     return ( <Emojis /> )
   } else {
     return (
-      <View>
-        <Text>You need to authorize Spotify to use Wakify</Text>
-        <Button
-          disabled={!request}
-          title="Authorize Spotify"
-          onPress={() => {
-            promptAsync();
-          }}
+      <View style={styles.container}>
+        <Image
+          style={styles.logo}
+          source={require('../assets/wakify.png')}
         />
+        <Text style={styles.captionText}>You need to authorize Spotify to use Wakify</Text>
+        <Pressable style={styles.button}
+          disabled={!request}
+          onPress={() => promptAsync()}>
+        <Text style={styles.text}>Authorize Spotify</Text>
+      </Pressable>
       </View>
     )
   }
@@ -95,8 +97,7 @@ const TokenCheck = () => {
 
   return (
     <View style={styles.container}>
-      <StatusBar style="auto" />
-      <Text style={styles.logoText}>Wakify</Text>
+    <StatusBar style="auto" />
       <TokenCheck />
     </View>
 
