@@ -5,7 +5,7 @@ import getAccessToken from "../../asyncStorage/getAccessToken";
 
 
 const spotifyApi = new SpotifyWebApi({
-    clientId: '7241615fa50c440dbf5d06ee41374ddb'
+    clientId: '4bcebf291d354ebd849e9e672f76ce40'
   });
 
   

@@ -17,7 +17,7 @@ import storeAccessToken from "../asyncStorage/storeAccessToken.js";
 WebBrowser.maybeCompleteAuthSession();
 
 const spotifyApi = new SpotifyWebApi({
-  clientId: '7241615fa50c440dbf5d06ee41374ddb'
+  clientId: '4bcebf291d354ebd849e9e672f76ce40'
 });
 
 const discovery = {
@@ -38,7 +38,7 @@ function SelectMood({ navigation }) {
   const [request, response, promptAsync] = useAuthRequest(
     {
       responseType: ResponseType.Token,
-      clientId: '7241615fa50c440dbf5d06ee41374ddb',
+      clientId: '4bcebf291d354ebd849e9e672f76ce40',
       scopes: ["user-read-email", "playlist-modify-public", "playlist-modify-private", "playlist-read-private", 
       "app-remote-control","user-read-playback-state", "user-modify-playback-state", "user-read-recently-played"],
       // In order to follow the "Authorization Code Flow" to fetch token after authorizationEndpoint
@@ -63,7 +63,7 @@ function SelectMood({ navigation }) {
       spotifyApi.setAccessToken(access_token)
       // console.log(access_token)
       setAccess_Token(access_token)
-      // storeAccessToken('access_token', access_token)
+      storeAccessToken('access_token', access_token)
     }
   }, [response]);
 
@@ -96,7 +96,7 @@ const TokenCheck = () => {
   return (
     <View style={styles.container}>
       <StatusBar style="auto" />
-      <Text>Wakify</Text>
+      <Text style={styles.logoText}>Wakify</Text>
       <TokenCheck />
     </View>
 

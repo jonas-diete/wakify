@@ -1,9 +1,10 @@
-import { Text, View, Button} from 'react-native';
+import { Text, View, Image} from 'react-native';
 import { StatusBar } from 'expo-status-bar';
 import styles from '../src/utils/styles.js'
 import registerForPushNotificationsAsync from '../src/utils/registerForPushNotifications';
 import React, { useEffect, useRef } from 'react';
 import * as Notifications from 'expo-notifications';
+import Pressable from 'react-native/Libraries/Components/Pressable/Pressable.js';
 
 
 function Home({ navigation }){
@@ -34,19 +35,22 @@ function Home({ navigation }){
   return(
   <View style={styles.container}>
       <StatusBar style="auto" />
-      <Text>Wakify - matches your mood to a playlist</Text>
-      <Button
-        title="Select Time to Get Notifications"
-        onPress={() => navigation.navigate('SelectTime')}
+      <Image
+        style={styles.logo}
+        source={require('../assets/wakify.png')}
       />
-      <Button
-        title="Select Your Mood"
-        onPress={() => navigation.navigate('SelectMood')}
-      />
-      <Button
-        title="Select Your Favourite Genres"
-        onPress={() => navigation.navigate('SelectGenre')}
-      />
+      <Pressable style={styles.button}
+         onPress={() => navigation.navigate('SelectTime')}>
+        <Text style={styles.text}>Notification Time</Text>
+      </Pressable>
+      <Pressable style={styles.button} 
+        onPress={() => navigation.navigate('SelectMood')}>
+        <Text style={styles.text}>Select Your Mood</Text>
+      </Pressable>
+      <Pressable style={styles.button} 
+        onPress={() => navigation.navigate('SelectGenre')}>
+        <Text style={styles.text}>Favourite Genres</Text>
+      </Pressable>
     </View>
   );
 }
