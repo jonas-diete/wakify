@@ -3,7 +3,7 @@
 Created by [Guillermina Lorenzo](https://github.com/GuillerminaLorenzo), [Mosho Osho](https://github.com/itsmosho), [Liovirgilda Mendonca](https://github.com/liovirgildam), [Millennia Severino](https://github.com/MillieKS) and [Jonas Diete](https://github.com/jonas-diete).
 
  
- About
+# About
  
  Our app allows the user to find a playlist that matches their mood. Wakify use the Spotiy API to search their log of playlist to match with how you are feeling. This app is in development. It currently runs on Expo Go using ReactNative. If you'd like to try this app or develop it futher feel free to scroll down to get started.
 
