@@ -22,11 +22,11 @@ Created by [Guillermina Lorenzo](https://github.com/GuillerminaLorenzo), [Mosho 
 ![Anurag's GitHub stats](https://github-readme-stats.vercel.app/api?username=MillieKS&show_icons=true&theme=transparent)
 
 
-![alt text](https://github.com/jonas-diete/wakify/blob/authorise-button/readme.img/wakify-emulator.png?raw=true)
+![alt text](https://github.com/jonas-diete/wakify/blob/readme/readme.img/wakify-emulator.png?raw=true)
 
 ## Design
 Our initial app design looked like this 
-![alt text](https://github.com/jonas-diete/wakify/blob/authorise-button/readme.img/initial-design.png?raw=true)
+![alt text](https://github.com/jonas-diete/wakify/blob/readme/readme.img/initial-design.png?raw=true)
 
 The current build of the app is similar to this design. The only changes are for the handling of data.
 Since Expo Go is not compatible with MongoDB we have opted to use AsyncStorage, and there are no model files either.
@@ -75,7 +75,7 @@ Once the project is loaded press 'w' to open the app on the web.
 Since this app is still in development mode, to be able to use it's features you'll need to set it up on the [Spotify developr portal](https://developer.spotify.com/dashboard/applications).
 
 - Login or create a new spotify account. Then create an app. It should look like this
-![alt text](https://github.com/jonas-diete/wakify/blob/authorise-button/readme.img/Spotify-dev1.png?raw=true)
+![alt text](https://github.com/jonas-diete/wakify/blob/readme/readme.img/Spotify-dev1.png?raw=true)
 - Then take the ClientId from that app and save it as the clientID in src/utils/getClientId.js
 - Then go back to the app. click into it and click edit settings
 - You need to add two redirecturi's for the SpotifyAPI to work. 
