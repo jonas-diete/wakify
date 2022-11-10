@@ -53,8 +53,8 @@ This is how the current build of the app works.
 
 ## Emulators 
 This app can be ran onn  your mobile phonor through an emulator on your computer. 
-For iOS we recommend using Xcode - "link to Xcode"
-For Android we recommend using Android studio - "link to Android studio
+- For iOS we recommend using Xcode
+- For Android we recommend using Android studio
 
 ## Running the App
 ### On Mobile
