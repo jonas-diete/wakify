@@ -11,7 +11,7 @@ Created by [Guillermina Lorenzo](https://github.com/GuillerminaLorenzo), [Mosho 
 
  We are all Makers Bootcamp students, creating our final project. We had 2 weeks to develop this app and decide on out apps functionality. During our course we learnt Ruby,SQL, HTML, CSS, Javascript so learing ReactNative whilst creating an app was a rewarding learning curve and experience. To manage our tickets we used Trello and regularly has checkins and retros .
 
- ![Anurag's GitHub stats](https://github-readme-stats.vercel.app/api?username=itsmosho&show_icons=true&theme=transparent)
+![Anurag's GitHub stats](https://github-readme-stats.vercel.app/api?username=itsmosho&show_icons=true&theme=transparent)
 
 ![Anurag's GitHub stats](https://github-readme-stats.vercel.app/api?username=GuillerminaLorenzo&show_icons=true&theme=transparent)
 
@@ -72,14 +72,20 @@ then run
 Once the project is loaded press 'w' to open the app on the web.
 
 ## Spotify Developer portal
+Since this app is still in development mode, to be able to use it's features you'll need to set it up on the [Spotify developr portal](https://developer.spotify.com/dashboard/applications).
 
+- Login or create a new spotify account. Then create an app. It should look like this
+![alt text](https://github.com/jonas-diete/wakify/blob/authorise-button/readme.img/Spotify-dev1.png?raw=true)
+- Then take the ClientId from that app and save it as the clientID in src/utils/getClientId.js
+- Then go back to the app. click into it and click edit settings
+- You need to add two redirecturi's for the SpotifyAPI to work. 
+- The first will be the expo from "Metro waiting exp://youripaddress:19000" when you run `npm start`
+- The last will be http://localhost:19006 this is for running on the web and testing
 ## Usage
 
+# App function
+- the app makes calls to spotify api to return playlist based on your mood. By clicking the emojis you will be sent to a corresponding playlist
 
-![Anurag's GitHub stats](https://github-readme-stats.vercel.app/api?username=itsmosho&show_icons=true&theme=transparent)
+# Testing
+To test with cypress, first run the web page, then run `npx cypress run`
 
-![Anurag's GitHub stats](https://github-readme-stats.vercel.app/api?username=GuillerminaLorenzo&show_icons=true&theme=transparent)
-
-![Anurag's GitHub stats](https://github-readme-stats.vercel.app/api?username=jonas-diete&show_icons=true&theme=transparent)
-
-![Anurag's GitHub stats](https://github-readme-stats.vercel.app/api?username=MillieKS&show_icons=true&theme=transparent)
