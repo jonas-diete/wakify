@@ -21,10 +21,53 @@ function App(){
   return (
     <NavigationContainer>
       <Stack.Navigator initialRouteName="Home">
-        <Stack.Screen name="Home" component={Home}/>
-        <Stack.Screen name="SelectTime" component={SelectTime} />
-        <Stack.Screen name="SelectMood" component={SelectMood} />
-        <Stack.Screen name="SelectGenre" component={SelectGenre} />
+        <Stack.Screen name="Home" component={Home} 
+          options={{
+            title: 'Home',
+            headerStyle: {
+              backgroundColor: '#FB6E6E',
+            },
+            headerTintColor: '#fff',
+            headerTitleStyle: {
+              fontWeight: 'bold',
+            },
+          }}/>
+        <Stack.Screen name="SelectTime" component={SelectTime} 
+          options={{
+            title: 'Select Time',
+            headerStyle: {
+              backgroundColor: '#FB6E6E',
+            },
+            headerTintColor: '#fff',
+            headerTitleStyle: {
+              fontWeight: 'bold',
+            },
+          }}
+        />
+        <Stack.Screen name="SelectMood" component={SelectMood} 
+          options={{
+            title: 'Select Mood',
+            headerStyle: {
+              backgroundColor: '#FB6E6E',
+            },
+            headerTintColor: '#fff',
+            headerTitleStyle: {
+              fontWeight: 'bold',
+            },
+          }}
+        />
+        <Stack.Screen name="SelectGenre" component={SelectGenre} 
+          options={{
+            title: 'Select Genre',
+            headerStyle: {
+              backgroundColor: '#FB6E6E',
+            },
+            headerTintColor: '#fff',
+            headerTitleStyle: {
+              fontWeight: 'bold',
+            },
+          }}
+        />
       </Stack.Navigator>
     </NavigationContainer>  
   );

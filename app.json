@@ -5,12 +5,12 @@
     "slug": "wakify",
     "version": "1.0.0",
     "orientation": "portrait",
-    "icon": "./assets/icon.png",
+    "icon": "./assets/wakify.png",
     "userInterfaceStyle": "light",
     "splash": {
       "image": "./assets/splash.png",
       "resizeMode": "contain",
-      "backgroundColor": "#ffffff"
+      "backgroundColor": "#FB6E6E"
     },
     "updates": {
       "fallbackToCacheTimeout": 0
