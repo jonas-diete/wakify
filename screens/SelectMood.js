@@ -13,7 +13,7 @@ import Emojis from "../src/utils/Emojis.js";
 import { useState } from "react";
 import storeAccessToken from "../asyncStorage/storeAccessToken.js";
 
-const clientId = "b8f36ad160674b8a981244939798c1f7";
+const clientId = "7241615fa50c440dbf5d06ee41374ddb";
 
 WebBrowser.maybeCompleteAuthSession();
 
@@ -26,9 +26,10 @@ const discovery = {
   tokenEndpoint: "https://accounts.spotify.com/api/token",
 };
 
-let access_token = "";
+let access_token = '';
 
 function SelectMood({ navigation }) {
+  const [isLoading, setLoading] = useState(true);
   const [request, response, promptAsync] = useAuthRequest(
     {
       responseType: ResponseType.Token,
@@ -61,16 +62,17 @@ function SelectMood({ navigation }) {
       access_token = response.params.access_token;
       access_token.toString;
       storeAccessToken("access_token", access_token);
+      setLoading(false);
     }
   }, [response]);
 
   const resetToken = () => {
-    access_token = "";
+    access_token = ''
   };
 
   const TokenCheck = () => {
-    if (access_token !== "") {
-      return <Emojis />;
+    if (access_token !== '' || !isLoading ) {
+      return <Emojis />
     } else {
       return (
         <View style={styles.container}>
