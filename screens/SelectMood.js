@@ -81,7 +81,12 @@ function SelectMood({ navigation }) {
             You need to authorize Spotify to use Wakify
           </Text>
           <Pressable
-            style={styles.button}
+            style={({ pressed }) => [
+              {
+                opacity: pressed ? 0.2 : 1,
+              },
+              styles.button,
+            ]}
             disabled={!request}
             title="Authorize Spotify"
             onPress={() => promptAsync()}

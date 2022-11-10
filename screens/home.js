@@ -34,19 +34,34 @@ function Home({ navigation }) {
       <StatusBar style="auto" />
       <Image style={styles.logo} source={require("../assets/wakify.png")} />
       <Pressable
-        style={styles.button}
+        style={({ pressed }) => [
+        {
+          opacity: pressed ? 0.2 : 1,
+        },
+        styles.button,
+      ]}
         onPress={() => navigation.navigate("SelectTime")}
       >
         <Text style={styles.text}>Notification Time</Text>
       </Pressable>
       <Pressable
-        style={styles.button}
+        style={({ pressed }) => [
+        {
+          opacity: pressed ? 0.2 : 1,
+        },
+        styles.button,
+      ]}
         onPress={() => navigation.navigate("SelectMood")}
       >
         <Text style={styles.text}>Select Your Mood</Text>
       </Pressable>
       <Pressable
-        style={styles.button}
+        style={({ pressed }) => [
+        {
+          opacity: pressed ? 0.2 : 1,
+        },
+        styles.button,
+      ]}
         onPress={() => navigation.navigate("SelectGenre")}
       >
         <Text style={styles.text}>Favourite Genres</Text>

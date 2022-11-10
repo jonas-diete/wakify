@@ -106,11 +106,7 @@ const styles = StyleSheet.create({
     favouriteGenre:{
       color:'#FB6E6E',
       fontWeight: 'bold',
-    }
-
+    },
 });
-
-
-
 
 export default styles;
