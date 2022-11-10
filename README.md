@@ -48,11 +48,10 @@ This is how the current build of the app works.
 1. Clone this repository
 2. Run 
 ```npm install```
-*This app was designed to run mobile, but can also be run in the browser
 
 
 ## Emulators 
-This app can be ran onn  your mobile phonor through an emulator on your computer. 
+This app can be ran on  your mobile phone through an emulator on your computer. 
 - For iOS we recommend using Xcode
 - For Android we recommend using Android studio
 
