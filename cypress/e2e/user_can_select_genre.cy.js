@@ -14,7 +14,7 @@ describe("SelectGenre", () => {
     cy.contains("Rock").should("be.visible");
     cy.contains("Electronic").should("be.visible");
     cy.contains("Hip-Hop").should("be.visible");
-    cy.contains("Classical").should("be.visible");
+    cy.contains("Classic").should("be.visible");
     cy.contains("Dubstep").should("be.visible");
     cy.contains("Folk").should("be.visible");
     cy.contains("R&B").should("be.visible");
