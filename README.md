@@ -1,7 +1,6 @@
 # Wakify - an app matching your mood to a playlist
 
-Produced by Lili, Guille, Moses, Jonas as part of the Makers Bootcamp
-Created by [Guillermina Lorenzo](https://github.com/GuillerminaLorenzo), [James Ruffini](https://github.com/iniffur), [Liovirgilda Mendonca](https://github.com/liovirgildam), [Millennia Severino](https://github.com/MillieKS) and [Jonas Diete](https://github.com/jonas-diete).
+Created by [Guillermina Lorenzo](https://github.com/GuillerminaLorenzo), [Mosho Osho](https://github.com/itsmosho), [Liovirgilda Mendonca](https://github.com/liovirgildam), [Millennia Severino](https://github.com/MillieKS) and [Jonas Diete](https://github.com/jonas-diete).
 
  
  About
@@ -10,7 +9,7 @@ Created by [Guillermina Lorenzo](https://github.com/GuillerminaLorenzo), [James 
 
  # Our Team 
 
- We are all Makers Bootcamp students, creating our final project. We had 2 weeks to develop this app and decide on out apps functionality. During our course we learnt Ruby,SQL, HTML, CSS, Javascript so learing react native whilst creating an app was a rewarding learning curve and experience. To manage our tickets we used Trello and regularly has checkins and retros .
+ We are all Makers Bootcamp students, creating our final project. We had 2 weeks to develop this app and decide on out apps functionality. During our course we learnt Ruby,SQL, HTML, CSS, Javascript so learing ReactNative whilst creating an app was a rewarding learning curve and experience. To manage our tickets we used Trello and regularly has checkins and retros .
 
  ![Anurag's GitHub stats](https://github-readme-stats.vercel.app/api?username=itsmosho&show_icons=true&theme=transparent)
 
