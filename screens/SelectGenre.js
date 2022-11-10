@@ -18,7 +18,12 @@ function Home({ navigation }) {
       <StatusBar style="auto" />
       <Text style={styles.captionText}>Choose your favourite genre</Text>
       <Pressable
-        style={styles.genreButton}
+       style={({ pressed }) => [
+        {
+          opacity: pressed ? 0.2 : 1,
+        },
+        styles.genreButton,
+      ]}
         onPress={async () => {
           await storeData("genre", "Rock");
           setGenre(await getData("genre"));
@@ -27,7 +32,12 @@ function Home({ navigation }) {
         <Text style={styles.genreText}>Rock</Text>
       </Pressable>
       <Pressable
-        style={styles.genreButton}
+        style={({ pressed }) => [
+        {
+          opacity: pressed ? 0.2 : 1,
+        },
+        styles.genreButton,
+      ]}
         onPress={async () => {
           await storeData("genre", "Electronic");
           setGenre(await getData("genre"));
@@ -36,7 +46,12 @@ function Home({ navigation }) {
         <Text style={styles.genreText}>Electronic</Text>
       </Pressable>
       <Pressable
-        style={styles.genreButton}
+        style={({ pressed }) => [
+        {
+          opacity: pressed ? 0.2 : 1,
+        },
+        styles.genreButton,
+      ]}
         onPress={async () => {
           await storeData("genre", "Rap");
           setGenre(await getData("genre"));
@@ -45,7 +60,12 @@ function Home({ navigation }) {
         <Text style={styles.genreText}>Rap</Text>
       </Pressable>
       <Pressable
-        style={styles.genreButton}
+        style={({ pressed }) => [
+        {
+          opacity: pressed ? 0.2 : 1,
+        },
+        styles.genreButton,
+      ]}
         onPress={async () => {
           await storeData("genre", "Hip-Hop");
           setGenre(await getData("genre"));
@@ -54,7 +74,12 @@ function Home({ navigation }) {
         <Text style={styles.genreText}>Hip-Hop</Text>
       </Pressable>
       <Pressable
-        style={styles.genreButton}
+       style={({ pressed }) => [
+        {
+          opacity: pressed ? 0.2 : 1,
+        },
+        styles.genreButton,
+      ]}
         onPress={async () => {
           await storeData("genre", "Classic");
           setGenre(await getData("genre"));
@@ -63,7 +88,12 @@ function Home({ navigation }) {
         <Text style={styles.genreText}>Classic</Text>
       </Pressable>
       <Pressable
-        style={styles.genreButton}
+        style={({ pressed }) => [
+        {
+          opacity: pressed ? 0.2 : 1,
+        },
+        styles.genreButton,
+      ]}
         onPress={async () => {
           await storeData("genre", "Dubstep");
           setGenre(await getData("genre"));
@@ -72,7 +102,12 @@ function Home({ navigation }) {
         <Text style={styles.genreText}>Dubstep</Text>
       </Pressable>
       <Pressable
-        style={styles.genreButton}
+        style={({ pressed }) => [
+        {
+          opacity: pressed ? 0.2 : 1,
+        },
+        styles.genreButton,
+      ]}
         onPress={async () => {
           await storeData("genre", "Folk");
           setGenre(await getData("genre"));
@@ -81,7 +116,12 @@ function Home({ navigation }) {
         <Text style={styles.genreText}>Folk</Text>
       </Pressable>
       <Pressable
-        style={styles.genreButton}
+        style={({ pressed }) => [
+        {
+          opacity: pressed ? 0.2 : 1,
+        },
+        styles.genreButton,
+      ]}
         onPress={async () => {
           await storeData("genre", "R&B");
           setGenre(await getData("genre"));
@@ -90,7 +130,12 @@ function Home({ navigation }) {
         <Text style={styles.genreText}>R&B</Text>
       </Pressable>
       <Pressable
-        style={styles.genreButton}
+        style={({ pressed }) => [
+        {
+          opacity: pressed ? 0.2 : 1,
+        },
+        styles.genreButton,
+      ]}
         onPress={async () => {
           await storeData("genre", "Pop");
           setGenre(await getData("genre"));
@@ -99,7 +144,12 @@ function Home({ navigation }) {
         <Text style={styles.genreText}>Pop</Text>
       </Pressable>
       <Pressable
-        style={styles.genreButton}
+        style={({ pressed }) => [
+        {
+          opacity: pressed ? 0.2 : 1,
+        },
+        styles.genreButton,
+      ]}
         onPress={async () => {
           await storeData("genre", "Jazz");
           setGenre(await getData("genre"));

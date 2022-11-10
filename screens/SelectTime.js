@@ -86,7 +86,12 @@ function SelectTime({ navigation }) {
         rowTextStyle={styles.dropdown2RowTxtStyle}
       />
       <Pressable
-        style={styles.button}
+        style={({ pressed }) => [
+        {
+          opacity: pressed ? 0.2 : 1,
+        },
+        styles.button,
+      ]}
         title="Submit"
         onPress={async () => {
           if (Platform.OS !== "web") {
