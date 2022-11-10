@@ -26,7 +26,7 @@ Created by [Guillermina Lorenzo](https://github.com/GuillerminaLorenzo), [Mosho 
 
 ## Design
 Our initial app design looked like this 
-![alt text](https://github.com/jonas-diete/wakify/blob/readme/readme.img/initial-design.png?raw=true)
+![alt text](https://github.com/jonas-diete/wakify/blob/readme/readme.img/design.png?raw=true)
 
 The current build of the app is similar to this design. The only changes are for the handling of data.
 Since Expo Go is not compatible with MongoDB we have opted to use AsyncStorage, and there are no model files either.
