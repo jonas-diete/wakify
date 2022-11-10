@@ -2,7 +2,6 @@ import * as React from "react";
 import { Text, View, Pressable, Image } from "react-native";
 import { StatusBar } from "expo-status-bar";
 import styles from "../src/utils/styles.js";
-import SpotifyWebApi from "spotify-web-api-node";
 import {
   makeRedirectUri,
   ResponseType,
@@ -16,10 +15,6 @@ import storeAccessToken from "../asyncStorage/storeAccessToken.js";
 const clientId = "7241615fa50c440dbf5d06ee41374ddb";
 
 WebBrowser.maybeCompleteAuthSession();
-
-const spotifyApi = new SpotifyWebApi({
-  clientId: clientId,
-});
 
 const discovery = {
   authorizationEndpoint: "https://accounts.spotify.com/authorize",
