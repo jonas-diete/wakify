@@ -89,6 +89,35 @@ const styles = StyleSheet.create({
       height:200,
     },
 
+    timeText:{
+      fontSize: 30,
+      fontWeight: 'bold',
+      lineHeight: 34,
+      letterSpacing: 0.5,
+    },
+
+    colonText:{
+      fontSize: 30,
+      fontWeight: 'bold',
+      lineHeight: 70,
+      letterSpacing: 0.25,
+    },
+
+    timeSelector:{
+      alignItems: 'center',
+      justifyContent: 'center',
+      paddingVertical: 7,
+      paddingHorizontal: 4,
+      borderRadius: 20,
+      elevation: 3,
+      width: 70,
+      height: 60,
+      marginVertical: 10,
+      backgroundColor: '#FFFFFF',
+      borderColor: '#FB6E6E',
+      borderWidth: 2,
+    },
+
     genreButton:{
       alignItems: 'center',
       justifyContent: 'center',

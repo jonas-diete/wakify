@@ -47,44 +47,47 @@ function SelectTime({ navigation }) {
         Your notification time is {time ? time : "not chosen yet."}
       </Text>
       <Text style={styles.captionText}>
-        You can change your notification time here:
+        Change your notification time here:
       </Text>
-      <SelectDropdown
-        data={hours}
-        onSelect={(selectedItem, index) => {
-          selectedHour = parseInt(selectedItem);
-        }}
-        defaultButtonText={"08"}
-        buttonTextAfterSelection={(selectedItem, index) => {
-          return "Hour " + selectedItem;
-        }}
-        rowTextForSelection={(item, index) => {
-          return item;
-        }}
-        buttonStyle={styles.dropdown2BtnStyle}
-        buttonTextStyle={styles.dropdown2BtnTxtStyle}
-        dropdownStyle={styles.dropdown2DropdownStyle}
-        rowStyle={styles.dropdown2RowStyle}
-        rowTextStyle={styles.dropdown2RowTxtStyle}
-      />
-      <SelectDropdown
-        data={minutes}
-        onSelect={(selectedItem, index) => {
-          selectedMinute = parseInt(selectedItem);
-        }}
-        defaultButtonText={"00"}
-        buttonTextAfterSelection={(selectedItem, index) => {
-          return "Minute " + selectedItem;
-        }}
-        rowTextForSelection={(item, index) => {
-          return item;
-        }}
-        buttonStyle={styles.dropdown2BtnStyle}
-        buttonTextStyle={styles.dropdown2BtnTxtStyle}
-        dropdownStyle={styles.dropdown2DropdownStyle}
-        rowStyle={styles.dropdown2RowStyle}
-        rowTextStyle={styles.dropdown2RowTxtStyle}
-      />
+      <View style={styles.rowContainer}>
+        <SelectDropdown
+          data={hours}
+          onSelect={(selectedItem, index) => {
+            selectedHour = parseInt(selectedItem);
+          }}
+          defaultButtonText={"08"}
+          buttonTextAfterSelection={(selectedItem, index) => {
+            return selectedItem;
+          }}
+          rowTextForSelection={(item, index) => {
+            return item;
+          }}
+          buttonStyle={styles.timeSelector}
+          buttonTextStyle={styles.timeText}
+          dropdownStyle={styles.dropdown2DropdownStyle}
+          rowStyle={styles.dropdown2RowStyle}
+          rowTextStyle={styles.dropdown2RowTxtStyle}
+        />
+        <Text style={styles.colonText}> : </Text>
+        <SelectDropdown
+          data={minutes}
+          onSelect={(selectedItem, index) => {
+            selectedMinute = parseInt(selectedItem);
+          }}
+          defaultButtonText={"00"}
+          buttonTextAfterSelection={(selectedItem, index) => {
+            return selectedItem;
+          }}
+          rowTextForSelection={(item, index) => {
+            return item;
+          }}
+          buttonStyle={styles.timeSelector}
+          buttonTextStyle={styles.timeText}
+          dropdownStyle={styles.dropdown2DropdownStyle}
+          rowStyle={styles.dropdown2RowStyle}
+          rowTextStyle={styles.dropdown2RowTxtStyle}
+        />
+      </View>
       <Pressable
         style={({ pressed }) => [
         {
