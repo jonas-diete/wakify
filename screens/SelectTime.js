@@ -1,11 +1,10 @@
 import React, { useEffect, useState } from "react";
 import schedulePushNotification from "../src/utils/schedulePushNotification";
-import { Text, View, Alert, Image, Platform } from "react-native";
+import { Text, View, Alert, Image, Platform, Pressable } from "react-native";
 import { StatusBar } from "expo-status-bar";
 import styles from "../src/utils/styles.js";
 import SelectDropdown from "react-native-select-dropdown";
 import { cancelAllScheduledNotificationsAsync } from "expo-notifications";
-import Pressable from "react-native/Libraries/Components/Pressable/Pressable";
 import storeData from "../asyncStorage/storeData";
 import getData from "../asyncStorage/getData";
 

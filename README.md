@@ -1,6 +1,7 @@
 # Wakify - an app matching your mood to a playlist
 
 Produced by Lili, Guille, Moses, Jonas as part of the Makers Bootcamp
+Created by [Guillermina Lorenzo](https://github.com/GuillerminaLorenzo), [James Ruffini](https://github.com/iniffur), [Liovirgilda Mendonca](https://github.com/liovirgildam), [Millennia Severino](https://github.com/MillieKS) and [Jonas Diete](https://github.com/jonas-diete).
 
  
  About
@@ -9,15 +10,27 @@ Produced by Lili, Guille, Moses, Jonas as part of the Makers Bootcamp
 
  # Our Team 
 
- We are all Makers Bootcamp students, creating our final project. We had 2 weeks to develop this app and devide on out apps functionality. During out course we learnt Ruby,SQL, HTML, CSS, Javascript so learing react native whilst creating an app was a rewarding learning curve.
+ We are all Makers Bootcamp students, creating our final project. We had 2 weeks to develop this app and decide on out apps functionality. During our course we learnt Ruby,SQL, HTML, CSS, Javascript so learing react native whilst creating an app was a rewarding learning curve and experience. To manage our tickets we used Trello and regularly has checkins and retros .
 
-https://stackoverflow.com/questions/14494747/how-to-add-images-to-readme-md-on-github
+ ![Anurag's GitHub stats](https://github-readme-stats.vercel.app/api?username=itsmosho&show_icons=true&theme=transparent)
 
-![alt text](https://github.com/jonas-diete/wakify/blob/authorise-button/readme.img/Auth-Spotify-Simulator.png?raw=true)
+![Anurag's GitHub stats](https://github-readme-stats.vercel.app/api?username=GuillerminaLorenzo&show_icons=true&theme=transparent)
+
+![Anurag's GitHub stats](https://github-readme-stats.vercel.app/api?username=liovirgildam&show_icons=true&theme=transparent)
+
+![Anurag's GitHub stats](https://github-readme-stats.vercel.app/api?username=jonas-diete&show_icons=true&theme=transparent)
+
+![Anurag's GitHub stats](https://github-readme-stats.vercel.app/api?username=MillieKS&show_icons=true&theme=transparent)
 
 
+![alt text](https://github.com/jonas-diete/wakify/blob/authorise-button/readme.img/wakify-emulator.png?raw=true)
 
 ## Design
+Our initial app design looked like this 
+![alt text](https://github.com/jonas-diete/wakify/blob/authorise-button/readme.img/initial-design.png?raw=true)
+
+The current build of the app is similar to this design. The only changes are for the handling of data.
+Since Expo Go is not compatible with MongoDB we have opted to use AsyncStorage, and there are no model files either.
 
 ## Dependencies
 
@@ -29,8 +42,8 @@ https://stackoverflow.com/questions/14494747/how-to-add-images-to-readme-md-on-g
 - Spotify web api node
 - AsyncStorage
 ## Testing
-For unit testing we used Jest
-For end-to-end testing we used Cypress
+- For unit testing we used Jest
+- For end-to-end testing we used Cypress
 
 
 # Getting started

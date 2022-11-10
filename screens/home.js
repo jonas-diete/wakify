@@ -1,10 +1,9 @@
-import { Text, View, Image} from 'react-native';
+import { Text, View, Image, Pressable} from 'react-native';
 import { StatusBar } from 'expo-status-bar';
 import styles from '../src/utils/styles.js'
 import registerForPushNotificationsAsync from '../src/utils/registerForPushNotifications';
 import React, { useEffect, useRef } from 'react';
 import * as Notifications from 'expo-notifications';
-import Pressable from 'react-native/Libraries/Components/Pressable/Pressable.js';
 
 
 function Home({ navigation }){
