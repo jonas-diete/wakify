@@ -80,6 +80,7 @@ Since this app is still in development mode, to be able to use it's features you
 - You need to add two redirecturi's for the SpotifyAPI to work. 
 - The first will be the expo from "Metro waiting exp://youripaddress:19000" when you run `npm start`
 - The last will be http://localhost:19006 this is for running on the web and testing
+(https://github.com/jonas-diete/wakify/blob/readme/readme.img/redirect-uris.png?raw=true)
 ## Usage
 
 # App function
