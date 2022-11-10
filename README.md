@@ -13,13 +13,13 @@ Produced by Lili, Guille, Moses, Jonas as part of the Makers Bootcamp
 
 https://stackoverflow.com/questions/14494747/how-to-add-images-to-readme-md-on-github
 
-![alt text](https://github.com/jonas-diete/wakify/blob/authorise-button/readme.img/Auth-Spotify Simulator.png?raw=true)
+![alt text](https://github.com/jonas-diete/wakify/blob/authorise-button/readme.img/Auth-Spotify-Simulator.png?raw=true)
 
 
 
-# Design
+## Design
 
-# Dependencies
+## Dependencies
 
 - Expo go 
 - Expo auth session
@@ -27,12 +27,11 @@ https://stackoverflow.com/questions/14494747/how-to-add-images-to-readme-md-on-g
 - Expo webpack/web browser
 - React Native
 - Spotify web api node
+- AsyncStorage
 ## Testing
 For unit testing we used Jest
 For end-to-end testing we used Cypress
 
-## Data storage
-Data is stored locally using AsyncStorage.
 
 # Getting started
 1. Clone this repository
@@ -41,28 +40,28 @@ Data is stored locally using AsyncStorage.
 *This app was designed to run mobile, but can also be run in the browser
 
 
-# Emulators 
+## Emulators 
 This app can be ran onn  your mobile phonor through an emulator on your computer. 
 For iOS we recommend using Xcode - "link to Xcode"
 For Android we recommend using Android studio - "link to Android studio
 
-# Running the App
-## On Mobile
+## Running the App
+### On Mobile
 Run `npm start` to run the project (currently only available in development mode).
 You can run this app by downloading the Expo Go app on through your phone's app store, 
 then connecting it to the QR code shown in the command line.
 If you have emulators installed, you can press 'a' or 'i' to run the app through the android and iOS emulators respectively.
 
-## On the Web
+### On the Web
 Run 
 ```export NODE_OPTIONS=--openssl-legacy-provider```
 then run 
 ```npm start --tunnel```
 Once the project is loaded press 'w' to open the app on the web.
 
-# Spotify Developer portal
+## Spotify Developer portal
 
-# Usage
+## Usage
 
 
 ![Anurag's GitHub stats](https://github-readme-stats.vercel.app/api?username=itsmosho&show_icons=true&theme=transparent)
