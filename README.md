@@ -25,11 +25,10 @@ Created by [Guillermina Lorenzo](https://github.com/GuillerminaLorenzo), [Mosho 
 ![alt text](https://github.com/jonas-diete/wakify/blob/readme/readme.img/wakify-emulator.png?raw=true)
 
 ## Design
-Our initial app design looked like this 
+This is how the current build of the app works.
 ![alt text](https://github.com/jonas-diete/wakify/blob/readme/readme.img/design.png?raw=true)
 
-The current build of the app is similar to this design. The only changes are for the handling of data.
-Since Expo Go is not compatible with MongoDB we have opted to use AsyncStorage, and there are no model files either.
+
 
 ## Dependencies
 
