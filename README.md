@@ -5,11 +5,11 @@ Created by [Guillermina Lorenzo](https://github.com/GuillerminaLorenzo), [Mosho 
  
 # About
  
- Our app allows the user to find a playlist that matches their mood. Wakify use the Spotiy API to search their log of playlist to match with how you are feeling. This app is in development. It currently runs on Expo Go using ReactNative. If you'd like to try this app or develop it futher feel free to scroll down to get started.
+ Our app allows the user to find a playlist that matches their mood. Wakify uses the Spotify API to search their log of playlists to match with how you are feeling. This app is in development. It currently runs on Expo Go using ReactNative. If you'd like to try this app or develop it futher feel free to scroll down to get started.
 
  # Our Team 
 
- We are all Makers Bootcamp students, creating our final project. We had 2 weeks to develop this app and decide on out apps functionality. During our course we learnt Ruby,SQL, HTML, CSS, Javascript so learing ReactNative whilst creating an app was a rewarding learning curve and experience. To manage our tickets we used Trello and regularly has checkins and retros .
+We are all Makers Bootcamp students and built this app as our final project. We had 2 weeks to develop this app and decide on our app's functionality. During our course we learnt Ruby, SQL, HTML, CSS, Javascript so learning ReactNative whilst creating an app was a rewarding learning curve and experience. To manage our tickets we used Trello and regularly has checkins and retros.
 
 ![Anurag's GitHub stats](https://github-readme-stats.vercel.app/api?username=itsmosho&show_icons=true&theme=transparent)
 
@@ -39,6 +39,7 @@ This is how the current build of the app works.
 - React Native
 - Spotify web api node
 - AsyncStorage
+
 ## Testing
 - For unit testing we used Jest
 - For end-to-end testing we used Cypress
@@ -51,7 +52,7 @@ This is how the current build of the app works.
 
 
 ## Emulators 
-This app can be ran on  your mobile phone through an emulator on your computer. 
+This app can be run on your mobile phone through an emulator on your computer. 
 - For iOS we recommend using Xcode
 - For Android we recommend using Android studio
 
@@ -70,7 +71,7 @@ then run
 Once the project is loaded press 'w' to open the app on the web.
 
 ## Spotify Developer portal
-Since this app is still in development mode, to be able to use it's features you'll need to set it up on the [Spotify developr portal](https://developer.spotify.com/dashboard/applications).
+Since this app is still in development mode, to be able to use it's features you'll need to set it up on the [Spotify developer portal](https://developer.spotify.com/dashboard/applications).
 
 - Login or create a new spotify account. Then create an app. It should look like this
 ![alt text](https://github.com/jonas-diete/wakify/blob/readme/readme.img/Spotify-dev1.png?raw=true)
@@ -83,8 +84,8 @@ Since this app is still in development mode, to be able to use it's features you
 ## Usage
 
 # App function
-- the app makes calls to spotify api to return playlist based on your mood. By clicking the emojis you will be sent to a corresponding playlist
+- The app makes calls to spotify api to return a playlist based on your mood. By clicking the emojis you will be sent to a corresponding playlist.
 
 # Testing
-To test with cypress, first run the web page, then run `npx cypress run`
+To test with cypress, first run the web page, then run `npx cypress run`.
 
