@@ -1,6 +1,6 @@
 // creates array of minutes and hours
 const createTimeArray = (length) => {
-  array = []
+  let array = []
   for (let i = 0; i < length; i++) {
     if (i < 10) {
       array.push("0" + String(i));

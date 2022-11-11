@@ -2,7 +2,6 @@ import * as React from "react";
 import { Text, View, Pressable, Image } from "react-native";
 import { StatusBar } from "expo-status-bar";
 import styles from "../styles.js";
-import SpotifyWebApi from "spotify-web-api-node";
 import {
   makeRedirectUri,
   ResponseType,
