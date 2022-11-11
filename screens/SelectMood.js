@@ -12,14 +12,10 @@ import * as WebBrowser from "expo-web-browser";
 import Emojis from "./Emojis.js";
 import { useState } from "react";
 import storeData from "../asyncStorage/storeData.js";
-
-const clientId = "ec022bb640e14cedb040b9752c64fa1b";
+import clientId from "../helperFunctions/getClientId.js";
 
 WebBrowser.maybeCompleteAuthSession();
 
-const spotifyApi = new SpotifyWebApi({
-  clientId: clientId,
-});
 
 const discovery = {
   authorizationEndpoint: "https://accounts.spotify.com/authorize",

@@ -1,8 +1,9 @@
 import SpotifyWebApi from "spotify-web-api-node";
 import getData from "../asyncStorage/getData";
+import clientId from "./getClientId";
 
 const spotifyApi = new SpotifyWebApi({
-  clientId: "ec022bb640e14cedb040b9752c64fa1b",
+  clientId: clientId,
 });
 
 async function getPlaylist(mood) {
