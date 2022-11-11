@@ -1,30 +1,19 @@
 import React, { useEffect, useState } from "react";
-import schedulePushNotification from "../src/utils/schedulePushNotification";
+import schedulePushNotification from "../helperFunctions/schedulePushNotification";
 import { Text, View, Alert, Image, Platform, Pressable } from "react-native";
 import { StatusBar } from "expo-status-bar";
-import styles from "../src/utils/styles.js";
+import styles from "../styles.js";
 import SelectDropdown from "react-native-select-dropdown";
 import { cancelAllScheduledNotificationsAsync } from "expo-notifications";
 import storeData from "../asyncStorage/storeData";
 import getData from "../asyncStorage/getData";
+import createTimeArray from "../helperFunctions/createTimeArray";
 
-const hours = [];
-const minutes = [];
+const hours = createTimeArray(24);
+const minutes = createTimeArray(60);
 
-for (let i = 0; i < 24; i++) {
-  if (i < 10) {
-    hours.push("0" + String(i));
-  } else hours.push(String(i));
-}
-
-for (let i = 0; i < 60; i++) {
-  if (i < 10) {
-    minutes.push("0" + String(i));
-  } else minutes.push(String(i));
-}
-
-let selectedHour;
-let selectedMinute;
+let selectedHour = 8;
+let selectedMinute = 0;
 
 function SelectTime({ navigation }) {
   const [time, setTime] = useState("Loading");

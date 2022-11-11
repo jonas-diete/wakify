@@ -1,15 +1,14 @@
 import SpotifyWebApi from "spotify-web-api-node";
-import getAccessToken from "../../asyncStorage/getAccessToken";
-import getData from "../../asyncStorage/getData";
+import getData from "../asyncStorage/getData";
 
 const spotifyApi = new SpotifyWebApi({
-  clientId: "b8f36ad160674b8a981244939798c1f7",
+  clientId: "ec022bb640e14cedb040b9752c64fa1b",
 });
 
 async function getPlaylist(mood) {
   let playlistUrl = "";
   let genre = await getData("genre");
-  spotifyApi.setAccessToken(await getAccessToken("access_token"));
+  spotifyApi.setAccessToken(await getData("access_token"));
 
   if (genre) {
     await spotifyApi
