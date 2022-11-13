@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { Text, Pressable, View } from "react-native";
 import { StatusBar } from "expo-status-bar";
-import styles from "../src/utils/styles.js";
+import styles from "../styles.js";
 import storeData from "../asyncStorage/storeData";
 import getData from "../asyncStorage/getData";
 

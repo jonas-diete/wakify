@@ -8,15 +8,15 @@ import {
   Linking,
   LogBox,
 } from "react-native";
-import getPlaylist from "./Playlist.js";
-import styles from "./styles.js";
+import getPlaylist from "../helperFunctions/Playlist.js";
+import styles from "../styles.js";
 
 function Emojis() {
   return (
     <View style={styles.container}>
       <Image
         style={styles.logoMood}
-        source={require("../../assets/wakifyText.png")}
+        source={require("../assets/wakifyText.png")}
       />
       <View style={styles.rowContainer}>
         <TouchableOpacity
@@ -26,7 +26,7 @@ function Emojis() {
         >
           <Image
             style={styles.emojis}
-            source={require("../../assets/happy.png")}
+            source={require("../assets/happy.png")}
           />
         </TouchableOpacity>
         <View style={styles.emojiSpacing}></View>
@@ -37,7 +37,7 @@ function Emojis() {
         >
           <Image
             style={styles.emojis}
-            source={require("../../assets/neutral.png")}
+            source={require("../assets/neutral.png")}
           />
         </TouchableOpacity>
       </View>
@@ -49,7 +49,7 @@ function Emojis() {
         >
           <Image
             style={styles.emojis}
-            source={require("../../assets/sad.png")}
+            source={require("../assets/sad.png")}
           />
         </TouchableOpacity>
         <View style={styles.emojiSpacing}></View>
@@ -60,7 +60,7 @@ function Emojis() {
         >
           <Image
             style={styles.emojis}
-            source={require("../../assets/distraught.png")}
+            source={require("../assets/distraught.png")}
           />
         </TouchableOpacity>
       </View>
@@ -72,7 +72,7 @@ function Emojis() {
         >
           <Image
             style={styles.emojis}
-            source={require("../../assets/angry.png")}
+            source={require("../assets/angry.png")}
           />
         </TouchableOpacity>
         <View style={styles.emojiSpacing}></View>
@@ -83,7 +83,7 @@ function Emojis() {
         >
           <Image
             style={styles.emojis}
-            source={require("../../assets/tired.png")}
+            source={require("../assets/tired.png")}
           />
         </TouchableOpacity>
       </View>
@@ -95,7 +95,7 @@ function Emojis() {
         >
           <Image
             style={styles.emojis}
-            source={require("../../assets/active.png")}
+            source={require("../assets/active.png")}
           />
         </TouchableOpacity>
         <View style={styles.emojiSpacing}></View>
@@ -106,7 +106,7 @@ function Emojis() {
         >
           <Image
             style={styles.emojis}
-            source={require("../../assets/love.png")}
+            source={require("../assets/love.png")}
           />
         </TouchableOpacity>
       </View>

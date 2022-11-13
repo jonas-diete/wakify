@@ -1,18 +1,17 @@
 import * as React from "react";
 import { Text, View, Pressable, Image } from "react-native";
 import { StatusBar } from "expo-status-bar";
-import styles from "../src/utils/styles.js";
-import SpotifyWebApi from "spotify-web-api-node";
+import styles from "../styles.js";
 import {
   makeRedirectUri,
   ResponseType,
   useAuthRequest,
 } from "expo-auth-session";
 import * as WebBrowser from "expo-web-browser";
-import Emojis from "../src/utils/Emojis.js";
+import Emojis from "./Emojis.js";
 import { useState } from "react";
-import storeAccessToken from "../asyncStorage/storeAccessToken.js";
-import clientId from "../src/utils/getClientId.js";
+import storeData from "../asyncStorage/storeData.js";
+import clientId from "../helperFunctions/getClientId.js";
 
 WebBrowser.maybeCompleteAuthSession();
 
@@ -57,7 +56,7 @@ function SelectMood({ navigation }) {
       setInterval(resetToken, 3600000);
       access_token = response.params.access_token;
       access_token.toString;
-      storeAccessToken("access_token", access_token);
+      storeData("access_token", access_token);
       setLoading(false);
     }
   }, [response]);

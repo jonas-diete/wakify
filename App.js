@@ -7,10 +7,12 @@ import SelectTime from './screens/SelectTime'
 import SelectMood from './screens/SelectMood'
 import SelectGenre from './screens/SelectGenre'
 
+
+// ensures alerts are seen when app is open
 Notifications.setNotificationHandler({
   handleNotification: async () => ({
     shouldShowAlert: true,
-    shouldPlaySound: false,
+    shouldPlaySound: true,
     shouldSetBadge: false,
   }),
 });
