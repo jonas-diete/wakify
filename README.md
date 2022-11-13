@@ -9,7 +9,7 @@ Created by [Guillermina Lorenzo](https://github.com/GuillerminaLorenzo), [Mosho 
 
  # Our Team 
 
-We are all Makers Bootcamp students and built this app as our final project. We had 2 weeks to develop this app and decide on our app's functionality. During our course we learnt Ruby, SQL, HTML, CSS, Javascript so learning ReactNative whilst creating an app was a rewarding learning curve and experience. To manage our tickets we used Trello and regularly has checkins and retros.
+We are all Makers Bootcamp students and built this app as our final project. We had 2 weeks to develop this app and decide on our app's functionality. During our course we learnt Ruby, SQL, HTML, CSS, Javascript so learning ReactNative whilst creating an app was a challenging but rewarding experience. To manage our tickets we used Trello and regularly had checkins and retros.
 
 ![Anurag's GitHub stats](https://github-readme-stats.vercel.app/api?username=itsmosho&show_icons=true&theme=transparent)
 
